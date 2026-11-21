@@ -1,0 +1,53 @@
+import streamlit as st
+
+st.set_page_config(page_title="Proyectos de Robótica", page_icon="🤖", layout="centered")
+
+# Pon aquí el enlace que te dará Streamlit en la Parte 2
+LINK_APP = "https://streamlit.io"
+
+st.markdown("""
+<style>
+.stApp { background-color: #0e1117; color: white; }
+h1 { color: #00ffcc; text-align: center; text-shadow: 0 0 10px #00ffcc; }
+.proyecto {
+    background-color: #1c1f26;
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 5px solid #b300ff;
+    margin-bottom: 15px;
+}
+.proyecto h3 { color: #b300ff; margin-top: 0; }
+.qr-box {
+    border: 2px dashed #b300ff;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 240px;
+}
+</style>
+""", unsafe_allow_html=True)
+
+st.title("Mis Proyectos de Robótica")
+
+st.markdown(f"""
+<div class="qr-box">
+    <p style="color:#00ffcc; font-weight:bold; margin-bottom:10px;">¡Escanea con el celular!</p>
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={LINK_APP}" alt="Código QR">
+</div>
+""", unsafe_allow_html=True)
+
+proyectos = [
+    ("1. Conexión de Computadoras", "Hicimos pasar una pelotita y carros de carreras de la pantalla de una computadora a otra."),
+    ("2. Botones y Hovers", "Diseñamos botones con palabras que tienen animaciones al pasar el mouse por encima."),
+    ("3. Pelea de Robots", "Controlamos robots a distancia mediante señales de internet para una pelea."),
+    ("4. Impresión 3D en Tinkercad", "Preparamos diseños en la plataforma Tinkercad para imprimirlos en 3D."),
+    ("5. Mano Robótica y Luces LED", "Armamos una mano robótica completa y encendimos luces LED.")
+]
+
+for titulo, desc in proyectos:
+    st.markdown(f'<div class="proyecto"><h3>{titulo}</h3><p>{desc}</p></div>', unsafe_allow_html=True)
+
+if st.button("¡Pruébame! ✨"):
+    st.balloons()
+    st.success("¡Proyecto de Robótica funcionando al 100%!")
