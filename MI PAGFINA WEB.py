@@ -3,7 +3,7 @@ import streamlit as st
 st.set_page_config(page_title="Proyectos de Robótica", page_icon="🤖", layout="centered")
 
 # Pon aquí el enlace que te dará Streamlit en la Parte 2
-LINK_APP = "https://streamlit.io"
+LINK_APP = "https://robotica-snhvpkfr7xkylnhhwv5wo9.streamlit.app/"
 
 st.markdown("""
 <style>
